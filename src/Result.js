@@ -4,6 +4,9 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import Form from 'react-bootstrap/Form';
 import './App.css';
 import {useLocation} from "react-router-dom";
+import img from "./img.png"
+import axa from "./img_1.png"
+import bbw from "./img_2.png"
 
 function Result(typ) {
     const [title, setTitle] = useState("");
@@ -11,8 +14,7 @@ function Result(typ) {
 
     const location = useLocation();
     const obj = location.state;
-    console.log(obj)
-    console.log(location.state)
+
     useEffect(() => {
         if (obj.typ == "Physical") {
             setTitle("Bodily-kinesthetic intelligence");
@@ -41,7 +43,8 @@ function Result(typ) {
         if (obj.typ == "Feelings") {
             setTitle("Intrapersonal intelligence");
             setText("Deine intrapersonale Intelligenz ermöglicht es dir, eine bemerkenswerte Selbstreflexion zu haben und ein tiefes Verständnis für deine eigenen Gefühle, Stärken, Schwächen und Ziele zu entwickeln. Du bist in der Lage, dich selbst zu motivieren, klare Ziele zu setzen und eine starke innere Ausrichtung zu haben. Dein Bewusstsein für deine persönliche Entwicklung ist außergewöhnlich und treibt dich dazu an, das Beste aus dir selbst herauszuholen.");
-        } if(obj.typ=="Nature") {
+        }
+        if (obj.typ == "Nature") {
             setTitle("Naturalistic intelligence");
             setText("Als jemand mit naturalistischer Intelligenz hast du eine tiefe Verbindung zur Natur und ein ausgeprägtes Verständnis und Wertschätzung für die natürliche Welt. Du bist besonders gut darin, Muster in der Natur zu erkennen, Tiere und Pflanzen zu beobachten und ein umfassendes Verständnis für ökologische Zusammenhänge zu entwickeln. Die Natur ist für dich eine endlose Quelle der Inspiration und du setzt dich aktiv für den Schutz und die Erhaltung unserer Umwelt ein.");
         }
@@ -49,13 +52,31 @@ function Result(typ) {
 
 
     return (
-        <div>
-            <h1>{title}</h1>
-            <h4>{text}</h4>
-
+        <div id={"resultPage"}>
             <div>
-
+                <div className={"nav"}>
+                    <h1 style={{marginTop: "30px", fontSize: "4rem"}}>{title}</h1>
+                    <img style={{width: "200px"}} src={img}/>
+                </div>
+                <div id={"resultText"}>
+                    <h4>{text}</h4>
+                </div>
             </div>
+
+
+            <footer id={"footer"}>
+                <h3 id={"sponsTitle"}>Sponsors:</h3>
+                <div id={"sponsors"}>
+                    <div className={"company"}>
+                        <h3>AXA Switzerland</h3>
+                        <img style={{width: "150px", marginRight: "100px"}} src={axa}/>
+                    </div>
+                    <div className={"company"}>
+                        <h3>BBW Pionierpark</h3>
+                        <img style={{width: "150px", marginTop: "30px"}} src={bbw}/>
+                    </div>
+                </div>
+            </footer>
         </div>
     )
 }
