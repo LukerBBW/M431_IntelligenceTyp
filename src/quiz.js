@@ -5,17 +5,18 @@ import Form from 'react-bootstrap/Form';
 import './App.css';
 import {useNavigate} from "react-router-dom";
 
+
 function Quiz() {
     const navigate = useNavigate();
 
-    const [countPhysical, setCountPhysical] = useState(0);
-    const [countAbstract, setCountAbstract] = useState(0);
-    const [countMusical, setCountMusical] = useState(0);
-    const [countLanguage, setCountLanguage] = useState(0);
-    const [countLogical, setCountLogical] = useState(0);
-    const [countSocial, setCountSocial] = useState(0);
-    const [countFeelings, setCountFeelings] = useState(0);
-    const [countNature, setCountNature] = useState(0);
+    const [countPhysical, setCountPhysical] = useState(6);
+    const [countAbstract, setCountAbstract] = useState(6);
+    const [countMusical, setCountMusical] = useState(6);
+    const [countLanguage, setCountLanguage] = useState(6);
+    const [countLogical, setCountLogical] = useState(6);
+    const [countSocial, setCountSocial] = useState(6);
+    const [countFeelings, setCountFeelings] = useState(6);
+    const [countNature, setCountNature] = useState(6);
 
     const ref1 = useRef(null);
     const ref2 = useRef(null);
@@ -69,7 +70,7 @@ function Quiz() {
     }
 
     return (
-        <div style={{textAlign: "center"}}>
+        <div style={{ textAlign: "center"}}>
             <div style={{position: 'fixed', top: 0, left: 0, width: '100%', display: 'flex', justifyContent: 'center'}}>
                 <ProgressBar now={progress} style={{width: '50%'}}/>
             </div>
